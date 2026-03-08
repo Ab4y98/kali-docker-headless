@@ -32,6 +32,7 @@ RUN pipx install knock-subdomains
 RUN export GO111MODULE=on && \
     go install -v github.com/projectdiscovery/pdtm/cmd/pdtm@latest && \
     /root/go/bin/pdtm -install-all && \
+    /root/go/bin/pdtm -i katana && \
     ln -sf /root/go/bin/* /usr/local/bin/ && \
     rm -f /usr/bin/httpx || true && \
     ln -sf /root/go/bin/httpx /usr/local/bin/httpx
